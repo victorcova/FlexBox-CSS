@@ -1,0 +1,56 @@
+/* FLEXBOX:
+-> Ferramenta CSS para distribuir elementos de forma resolvida mediante as suas propriedades
+-  O Display: Flex é decalrado no CONTAINER.
+-  O objetivo é alinhar os flex-itens dentro do container.
+-  O Flex só tem valor para os elementos filhos, ou seja o container (pai) aplica o posicionamento flex para as divs dentro deste (filhos).
+-  Quando não é definida a altura do container em sua classe, todas as alturas ficam de acordo com a maior.
+-  Flex tem 2 eixos: eixo X (linha) e Y (vertical). O eixo X é o padrão (default) de aplicação.
+-  Usando o flex-direction é possível mudar o eixo padrão (row ou column). Não se mistura rows com column.
+-  A borda inicial do Flex é a esquerda (como na escrita). Pode ser alteradp pelo writing-mode.
+-  Os itens (filhos do container) não se esticam para ocupar todo espaço do eixo desejado. Mas encolhem quando redimensionada a tela.
+-  flex-wrap: nowrap: Propriedade que trava a quebra linha se ficar apertado.
+-  flex-wrap: wrap: Propriedade que permite a quebra de linha se ficar apertado.
+-  justify-content: define o alinhamento ao longo do eixo definido
+-  align-items: de forma similar ao justify-content poré atua no outro eixo.
+
+
+-> Guia: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+*/
+
+
+.flex-container{
+    display: flex;
+    /* flex-wrap: nowrap; */
+    flex-wrap: wrap;
+    justify-content: center;
+    /* align-items: center; */
+    align-content: center;
+    /* flex-direction: row; */
+    /* writing-mode: vertical-rl; */   
+    width: 70vw; 
+    /* height: 100vh; */
+    margin: auto;
+}
+
+.flex-item{
+    /* height: 20%; Colocando as caixas dos itens do mesmo tamanho */
+    flex: 0 1 auto; 
+    /* flex: 0 1 20%;  */
+    /* flex: 1 1 20%;  */
+    /* Faz com que os itens ocupem só os espaços disponíveis - que não cresçam, só encolham.
+    O 0 é o flex-grow que diz o tanto que cada item pode crescer.
+    O 1 se refere ao flex-flick que diz o quanto ele pode encolher
+    O auto se refere ao flex-basis que dá largura padrão aos itens. Logo, auto, ocupa apenas o espaço disponível.
+    */
+}
+
+.card{
+    width: 10vw;
+    margin: 5px;
+    padding: 5px;
+    background-color: gainsboro;    
+}
+
+.card p{
+    font-size: 1.2em;
+}
